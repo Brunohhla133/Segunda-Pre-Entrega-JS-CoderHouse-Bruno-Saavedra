@@ -49,3 +49,53 @@ const prendas3 = [
         precio: 20,
     }
 ]
+function aviso(){
+    alert("Los resultados de su búsqueda se mostrarán por consola")
+}
+function todasLasPrendas(){
+    const todas = [
+        "Remera White",
+        "Remera Black",
+        "Remera Orange",
+        "Pantalón White",
+        "Pantalón Black",
+        "Pantalón Orange",
+        "Campera White",
+        "Campera Black",
+        "Campera Orange",
+    ];
+alert("Estas son todas las prendas disponibles, en total son " + ": " + todas.length)
+for(let i = 0; i < todas.length; i++){
+    alert((i + 1) + " " + todas[i])
+}
+}
+let menu;
+do{
+    menu = parseInt(prompt("Seleccione la categoría que desee ver: \n 1.Remeras \n 2.Pantalones \n 3.Camperas \n 4.Todos los productos \n 0.Salir"))
+switch(menu){
+    case 0:
+        alert("Gracias por elegirnos")
+        break;
+    case 1:
+        const remeras = prendas1.filter((el) => el.nombre)
+        console.log(remeras)
+        aviso()
+        break;
+    case 2:
+        const pantalones = prendas2.filter((el) => el.nombre)
+        console.log(pantalones)
+        aviso()
+        break;
+    case 3:
+        const camperas = prendas3.filter((el) => el.nombre)
+        console.log(camperas)
+        aviso()
+        break;
+    case 4:
+        todasLasPrendas()
+        break
+    default:
+        alert("El número no es válido")
+}
+}while(menu !== 0)
+
